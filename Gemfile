@@ -5,7 +5,7 @@ ruby "3.1.3"
 
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
+
 gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
@@ -20,7 +20,13 @@ end
 gem 'bootstrap', '~> 5.2.2'
 group :development do
    gem "web-console"
+   gem "sqlite3", "~> 1.4"
 end
+
+group :production do
+  gem 'pg'
+end
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
