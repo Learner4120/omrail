@@ -18,17 +18,14 @@
           <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to "Contact", "#", class: "nav-link" %></li>
-    <li class="nav-item pull-md-right">        <% if user_signed_in? %>
-          <li class="nav-item pull-md-right"><%= link_to "Log Out", signout_path, method: :delete,  class: "nav-link" %>
+            <% if user_signed_in? %>
+          <li class="nav-item pull-md-right"><%= link_to "Log Out", signout_path, method: :delete, class: "nav-link" %>
           </li>
-          
-          <% else %>
-        
-            <%= link_to "Sign Up", signup_path, class: "nav-link btn btn-primary" %>
-                </li>  
-                <%= link_to "Sign In", signin_path, class: "nav-link" %></li> 
+    <% else %>
+          <li class="nav-item pull-md-right"><%= link_to "Sign Up", signup_path, class: "nav-link btn btn-primary" %></li>  
+          <li class="nav-item pull-md-right"><%= link_to "Sign In", signin_path, class: "nav-link" %></li> 
+    <% end %>
 
-          <% end %>
 
         </ul>
       </div>
@@ -36,11 +33,10 @@
 
     <!-- Flash Messages -->
     
-    <%= content_tag(:div, message, class: "alert alert-info #{name}") %>
-    <% end %>
-    <end>
-
-
+    <% flash.each do |name, message| %>
+      <%= content_tag(:div, message, class: "alert alert-info #{name}") %> 
+      <% end %>
+   
     <!-- Page Content -->
     <%= yield %>
     
