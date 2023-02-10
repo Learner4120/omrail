@@ -19,7 +19,8 @@ group :development, :test do
 end
 gem 'bootstrap', '~> 5.2.2'
 gem 'devise'
-gem 'activeadmin'
+gem 'activeadmin', '~> 2.13', '>= 2.13.1'
+gem 'inherited_resources', '~> 1.13', '>= 1.13.1'
 
 group :development do
    gem "web-console"

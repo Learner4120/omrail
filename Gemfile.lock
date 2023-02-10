@@ -293,7 +293,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
-  activeadmin
+  activeadmin (~> 2.13, >= 2.13.1)
   bootsnap
   bootstrap (~> 5.2.2)
   capybara
@@ -301,6 +301,7 @@ DEPENDENCIES
   devise
   image_processing (~> 1.2)
   importmap-rails
+  inherited_resources (~> 1.13, >= 1.13.1)
   jbuilder
   pg
   puma (~> 5.0)
