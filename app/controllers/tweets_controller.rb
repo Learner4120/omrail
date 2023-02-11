@@ -10,6 +10,7 @@
   # GET /tweets/1
   # GET /tweets/1.json
   def show
+    @tweets = Tweet.find(params[:id])
   end
 
   # GET /tweets/new
