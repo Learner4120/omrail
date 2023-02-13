@@ -10,7 +10,7 @@
   # GET /tweets/1
   # GET /tweets/1.json
   def show
-    @tweets = Tweet.find(params[:id])
+    @tweet = Tweet.find(params[:id])
   end
 
   # GET /tweets/new
@@ -61,5 +61,5 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tweet_params
-      params.require(:tweet).permit(:tweet)
+      params.require(:tweet).permit(:content)
 end
