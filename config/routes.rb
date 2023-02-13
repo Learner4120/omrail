@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
-  resources :items
-  resources :tweets
-  ActiveAdmin.routes(self)
-  devise_for :users
-  as :user do 
-     get "signin" => 'devise/sessions#new'
+ get 'users/:username', to: 'users#show'
 
-     get "signout" => 'devise/sessions#destroy'
-     get "signup" => 'devise/registrations#new' 
+ resources :items
+ resources :tweets
+ ActiveAdmin.routes(self)
+ devise_for :users
+  as :user do
+    get "signin", to: 'devise/sessions#new'
+    delete "signout", to: 'devise/sessions#destroy'
+    get 'signup', to: 'devise/registrations#new'
   end
-  root 'home#index'
-  get 'about' => 'home#about'
-  get 'contact_us' => 'home#contact_us'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+
+  root 'home#index'
+  get 'about', to: 'home#about'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
