@@ -20,7 +20,10 @@ end
 gem 'bootstrap', '~> 5.2.2'
 gem 'devise'
 gem 'activeadmin', '~> 2.13', '>= 2.13.1'
-gem 'inherited_resources', '~> 1.13', '>= 1.13.1'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
+
+
 
 group :development do
    gem "web-console"
