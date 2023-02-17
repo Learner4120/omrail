@@ -22,7 +22,8 @@ gem 'devise'
 gem 'activeadmin', '~> 2.13', '>= 2.13.1'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
-
+gem 'acts_as_votable'
+gem 'paperclip', " 6.1.0"
 
 
 group :development do
